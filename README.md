@@ -41,17 +41,28 @@
 
 ### 1️⃣ Binary Snake Optimizer (BSO)
 
-Inspired by snake foraging behavior, this **metaheuristic search algorithm** explores the feature space to find an optimal subset of data.
-┌─────────────────────────────────────────────────────────────┐
-│ BSO FEATURE SELECTION │
-├─────────────────────────────────────────────────────────────┤
-│ Population: 15 snake solutions │
-│ Generations: 20 iterations │
-│ Fitness = (Accuracy × 0.7) + (Feature Reduction × 0.3) │
-│ Reduction: 32 → 13 features (59% reduction) │
-└─────────────────────────────────────────────────────────────┘
 
-text
+
+🐍 Binary Snake Optimizer (BSO)
+Inspired by snake foraging behavior, this metaheuristic search algorithm explores the feature space to find an optimal subset of data for predicting student performance.
+
+Project Application:
+
+Population: 15 candidate feature subsets
+
+Generations: 20 iterations
+
+Fitness Function: Balances accuracy (70%) with feature reduction (30%)
+
+Dataset: 32 features → 13 selected (59% reduction)
+
+Result: Improved accuracy from 74.4% to 76.3%
+
+BSO identified the most influential features for student success: absences, studytime, failures, goout, Dalc, and Medu – providing educators with actionable insights for early intervention.
+
+
+
+
 
 ### 2️⃣ Random Forest Classification
 
