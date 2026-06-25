@@ -60,29 +60,7 @@ The **"Predictive Brain"** of the system. Processes lifestyle, demographic, and 
 ### 3️⃣ Heuristic Intervention Agent
 
 When a student is predicted to fail, this agent takes over. It iterates through **Actionable Features** and queries the model until it finds the minimum change required for a passing prediction.
-┌─────────────────────────────────────────────────────────────┐
-│ INTERVENTION SEARCH AGENT │
-├─────────────────────────────────────────────────────────────┤
-│ ┌─────────────────┐ ┌─────────────────────────────┐ │
-│ │ Student Profile │ ──► │ Current Prediction: FAIL │ │
-│ │ (Failing) │ └─────────────────────────────┘ │
-│ └─────────────────┘ │ │
-│ ▼ │
-│ ┌─────────────────────────────────────────────────────┐ │
-│ │ Try changes: │ │
-│ │ 1. Increase Study Time (1→4) │ │
-│ │ 2. Reduce Absences │ │
-│ │ 3. Reduce Social Activities │ │
-│ └─────────────────────────────────────────────────────┘ │
-│ │ │
-│ ▼ │
-│ ┌─────────────────┐ ┌─────────────────────────────┐ │
-│ │ ✅ Intervention│ ──► │ "Reduce absences AND │ │
-│ │ Found! │ │ increase study time" │ │
-│ └─────────────────┘ └─────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────┘
 
-text
 
 ---
 
