@@ -109,15 +109,17 @@ text
 | XGBoost (BSO) | 68.6% | - | - | - | 13 |
 
 ### 📊 Key Improvements
-┌─────────────────────────────────────────────────────────────────────┐
-│ BEFORE (Baseline) AFTER (BSO + Balanced) │
-│ ┌───────────────────────────┐ ┌───────────────────────────────┐ │
-│ │ Features: 32 │ │ Features: 13 (59% ↓) │ │
-│ │ Accuracy: 74.4% │ │ Accuracy: 76.3% (1.9% ↑) │ │
-│ │ Fail Recall: 60.6% │ │ Fail Recall: 64.7% (4.1% ↑) │ │
-│ │ Fail Detection: Poor │ │ Fail Detection: Improved ✅ │ │
-│ └───────────────────────────┘ └───────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────────┘
+Before (Baseline):
+  - Features: 32
+  - Accuracy: 74.4%
+  - Fail Recall: 60.6%
+  - Fail Detection: Poor
+
+After (BSO + Balanced):
+  - Features: 13 (59% ↓)
+  - Accuracy: 76.3% (1.9% ↑)
+  - Fail Recall: 64.7% (4.1% ↑)
+  - Fail Detection: Improved ✅
 
 text
 
@@ -141,62 +143,35 @@ text
 
 ---
 
-## 🧪 Sample Intervention Case Study
+🧪 Sample Intervention Case Study
+Scenario: Student Predicted to Fail
+Student Profile:
 
-### Scenario: Student Predicted to Fail
-┌─────────────────────────────────────────────────────────────────────┐
-│ TARGET STUDENT │
-│ ├── Study Time: 2 hours/week │
-│ ├── Absences: 15 days │
-│ ├── Social Activities: High (4/5) │
-│ ├── Alcohol (Weekday): Moderate (3/5) │
-│ └── Past Failures: 1 │
-│ │
-│ 🔴 PREDICTION: FAIL │
-└─────────────────────────────────────────────────────────────────────┘
-│
-▼
-┌─────────────────────────────────────────────────────────────────────┐
-│ 🤖 AI AGENT SEARCH │
-│ ┌─────────────────────────────────────────────────────────────┐ │
-│ │ Trying: Increase study time to 3 hours/week │ │
-│ │ Result: Still FAIL ❌ │ │
-│ │ │ │
-│ │ Trying: Increase study time to 4 hours/week │ │
-│ │ Result: PASS ✅ │ │
-│ └─────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────────┘
-│
-▼
-┌─────────────────────────────────────────────────────────────────────┐
-│ ✅ INTERVENTION FOUND! │
-│ │
-│ "The student should: INCREASE STUDY TIME to 4+ hours/week" │
-│ │
-│ 📈 Predicted Outcome: PASS ✅ │
-└─────────────────────────────────────────────────────────────────────┘
+Study Time: 2 hours/week
 
-text
+Absences: 15 days
+
+Social Activities: High (4/5)
+
+Alcohol (Weekday): Moderate (3/5)
+
+Past Failures: 1
+
+🔴 PREDICTION: FAIL
+
+🤖 AI Agent Search Process
+Step	Action	Result
+1	Try: Increase study time to 3 hours/week	Still FAIL ❌
+2	Try: Increase study time to 4 hours/week	PASS ✅
+✅ INTERVENTION FOUND!
+Recommendation: "The student should INCREASE STUDY TIME to 4+ hours/week"
+
+📈 Predicted Outcome: PASS ✅
+
+
 
 ---
 
-## 📁 Project Structure
-Edu-Predict/
-├── data/
-│ ├── student-mat.csv # Mathematics dataset
-│ └── student-por.csv # Portuguese dataset
-├── src/
-│ ├── data_preprocessing.py # Loading & encoding
-│ ├── bso_feature_selection.py # Binary Snake Optimizer
-│ ├── model_training.py # Random Forest + XGBoost
-│ ├── intervention_agent.py # Heuristic search agent
-│ └── visualization.py # Plots & confusion matrices
-├── notebooks/
-│ └── analysis.ipynb # Exploratory data analysis
-├── output/
-│ ├── feature_importance.png
-│ ├── confusion_matrix.png
-│ └── bso_fitness.png
-├── README.md
-├── requirements.txt
-└── main.py # End-to-end pipeline
+dataset: Contains student-mat.csv and student-por.csv.
+EduPredict_Final.ipynb: The main Google Colab implementation.
+Reports/: Phase 1, 2, and 3 documentation.
